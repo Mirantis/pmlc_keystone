@@ -36,6 +36,9 @@ class pmlc_keystone (
   $user_mail_attribute     = $::pmlc_keystone::params::user_mail_attribute,
   $user_enabled_attribute  = $::pmlc_keystone::params::user_enabled_attribute,
   $management_vip          = $::pmlc_keystone::params::management_vip,
+  $use_ssl                 = $::pmlc_keystone::params::use_ssl,
+  $public_endpoint         = undef,
+  $admin_endpoint          = undef,
 ) inherits ::pmlc_keystone::params {
 
   include stdlib
@@ -67,6 +70,11 @@ class pmlc_keystone (
     validate_string($user_name_attribute)
     validate_string($user_mail_attribute)
     validate_string($user_enabled_attribute)
+  }
+
+  if $use_ssl == true {
+    validate_string($public_endpoint)
+    validate_string($admin_endpoint)
   }
 
   include ::pmlc_keystone::install

@@ -26,4 +26,5 @@ class pmlc_keystone::params {
   $user_name_attribute     = 'samaccountname'
   $user_mail_attribute     = 'samaccountname'
   $user_enabled_attribute  = 'samaccountname'
+  $use_ssl                 = false
 }

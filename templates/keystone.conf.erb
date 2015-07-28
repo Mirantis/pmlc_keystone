@@ -53,7 +53,11 @@ public_port=5000
 # set this value if the base URL contains a path (e.g.
 # /prefix/v2.0) or the endpoint should be found on a different
 # server. (string value)
+<% if @public_endpoint %>
+public_endpoint=<%= @public_endpoint %>
+<% else %>
 #public_endpoint=<None>
+<% end %>
 
 # The base admin endpoint URL for Keystone that is advertised
 # to clients (NOTE: this does NOT affect how Keystone listens
@@ -63,8 +67,11 @@ public_port=5000
 # set this value if the base URL contains a path (e.g.
 # /prefix/v2.0) or the endpoint should be found on a different
 # server. (string value)
+<% if @admin_endpoint %>
+admin_endpoint=<%= @management_vip %>
+<% else %>
 #admin_endpoint=<None>
-
+<% end %>
 # The number of worker processes to serve the public WSGI
 # application. Defaults to number of CPUs (minimum of 2).
 # (integer value)

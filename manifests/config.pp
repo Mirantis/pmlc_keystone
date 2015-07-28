@@ -35,6 +35,9 @@ class pmlc_keystone::config (
   $user_name_attribute     = $::pmlc_keystone::user_name_attribute,
   $user_mail_attribute     = $::pmlc_keystone::user_mail_attribute,
   $user_enabled_attribute  = $::pmlc_keystone::user_enabled_attribute,
+  $use_ssl                 = $::pmlc_keystone::use_ssl,
+  $public_endpoint         = $::pmlc_keystone::public_endpoint,
+  $admin_endpoint          = $::pmlc_keystone::admin_endpoint,
 ) inherits ::pmlc_keystone {
 
   $conf = '/etc/keystone/keystone.conf'
